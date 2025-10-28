@@ -2,6 +2,9 @@ package team.gif.robot;
 
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import team.gif.robot.commands.SparkOneBackward;
+import team.gif.robot.commands.SparkOneForward;
+
 public class OI {
     /*
      * Instantiate all joysticks/controllers and their buttons here
@@ -85,6 +88,9 @@ public class OI {
          * Simple Test:
          *   aX.onTrue(new PrintCommand("aX"));
          */
+        dA.whileTrue(new SparkOneForward());
+        dB.whileTrue(new SparkOneBackward());
+
 
 
 
