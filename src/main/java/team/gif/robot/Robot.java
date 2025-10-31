@@ -11,6 +11,7 @@ import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
 import team.gif.robot.subsystems.SparkOne;
 import team.gif.robot.subsystems.TalonOne;
+import team.gif.robot.subsystems.TalonTwo;
 import team.gif.robot.subsystems.drivers.Pigeon;
 
 /**
@@ -24,6 +25,7 @@ public class Robot extends TimedRobot {
   private RobotContainer robotContainer;
   public static TalonOne talonOne;
   public static SparkOne sparkOne;
+  public static TalonTwo talonTwo;
   public static OI oi;
 
   public static Pigeon pigeon;
@@ -43,6 +45,7 @@ public class Robot extends TimedRobot {
     robotContainer = new RobotContainer();
     talonOne = new TalonOne();
     sparkOne = new SparkOne();
+    talonTwo = new TalonTwo();
 
     //These should be at or near the bottom
     oi = new OI();
