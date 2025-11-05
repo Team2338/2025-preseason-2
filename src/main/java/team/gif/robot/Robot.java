@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
 import team.gif.robot.commands.AutosGroup;
+import team.gif.robot.subsystems.DriveChain;
 import team.gif.robot.subsystems.SparkOne;
 import team.gif.robot.subsystems.TalonOne;
 import team.gif.robot.subsystems.TalonTwo;
@@ -28,6 +29,7 @@ public class Robot extends TimedRobot {
   public static SparkOne sparkOne;
   public static TalonTwo talonTwo;
   public static OI oi;
+  public static DriveChain driveChain;
 
   public static Pigeon pigeon;
 
@@ -47,6 +49,7 @@ public class Robot extends TimedRobot {
     talonOne = new TalonOne();
     sparkOne = new SparkOne();
     talonTwo = new TalonTwo();
+    driveChain = new DriveChain();
 
     //These should be at or near the bottom
     oi = new OI();
