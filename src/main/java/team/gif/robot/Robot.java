@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
+import team.gif.robot.commands.AutosGroup;
 import team.gif.robot.subsystems.SparkOne;
 import team.gif.robot.subsystems.TalonOne;
 import team.gif.robot.subsystems.TalonTwo;
@@ -50,6 +51,8 @@ public class Robot extends TimedRobot {
     //These should be at or near the bottom
     oi = new OI();
     ui = new UI();
+    autonomousCommand = new AutosGroup();
+
 
   }
 
@@ -85,7 +88,9 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during autonomous. */
   @Override
-  public void autonomousPeriodic() {}
+  public void autonomousPeriodic() {
+    autonomousCommand.schedule();
+  }
 
   @Override
   public void teleopInit() {
