@@ -1,12 +1,12 @@
-package team.gif.robot.commands;
+package team.gif.robot.commands.Collector;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import team.gif.robot.Constants;
 import team.gif.robot.Robot;
 
-public class CollectorSpin extends Command {
+public class CollectorForward extends Command {
 
-    public CollectorSpin() {
+    public CollectorForward() {
         super();
         addRequirements(Robot.collector);
         //addRequirements(Robot.climber); // uncomment
@@ -31,5 +31,7 @@ public class CollectorSpin extends Command {
 
     // Called when the command ends or is interrupted.
     @Override
-    public void end(boolean interrupted) {}
+    public void end(boolean interrupted) {
+        Robot.collector.moveCollector(0);
+    }
 }
