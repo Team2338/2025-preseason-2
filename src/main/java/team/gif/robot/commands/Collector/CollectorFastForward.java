@@ -21,7 +21,7 @@ public class CollectorFastForward extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        Robot.collector.moveCollector(Constants.MULTIPLIED_TALON_PERCENT);
+        Robot.collector.moveCollector(Constants.COLLECTOR_BOOST_MULT * Constants.COLLECTOR_TALON_PERCENT);
 
     }
 

@@ -14,8 +14,8 @@ package team.gif.robot;
  */
 public final class Constants {
     public static final double COLLECTOR_TALON_PERCENT = 0;
-    public static final double COLLECTOR_BOOST_PERCENT = 0;
-    public static final double MULTIPLIED_TALON_PERCENT = Constants.COLLECTOR_BOOST_PERCENT * Constants.COLLECTOR_TALON_PERCENT;
+    public static final double COLLECTOR_BOOST_MULT = 0;
+    public static final double MULTIPLIED_TALON_PERCENT = Constants.COLLECTOR_BOOST_MULT * Constants.COLLECTOR_TALON_PERCENT;
 
 
 }
