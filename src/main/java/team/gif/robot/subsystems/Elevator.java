@@ -5,6 +5,7 @@
 package team.gif.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.NeutralMode;
+import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import team.gif.robot.RobotMap;
@@ -19,6 +20,8 @@ public class Elevator extends SubsystemBase {
         elevatorMotor.setNeutralMode(NeutralMode.Brake);
 
     }
-    public void
+    public void moveElevator(double percentOutput) {
+        elevatorMotor.set(TalonSRXControlMode.PercentOutput, percentOutput);
+    }
 
 }

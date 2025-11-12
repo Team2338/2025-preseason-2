@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
+import team.gif.robot.subsystems.Elevator;
 import team.gif.robot.subsystems.drivers.Pigeon;
 
 /**
@@ -21,6 +22,10 @@ public class Robot extends TimedRobot {
   private static Command autonomousCommand;
   private RobotContainer robotContainer;
   public static OI oi;
+
+  public static Elevator elevator;
+
+  public static
 
   public static Pigeon pigeon;
 
