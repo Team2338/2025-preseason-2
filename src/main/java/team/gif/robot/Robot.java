@@ -40,11 +40,11 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
+    collector = new Collector();
 
     //These should be at or near the bottom
     oi = new OI();
     ui = new UI();
-    collector = new Collector();
 
   }
 
