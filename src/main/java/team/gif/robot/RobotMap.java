@@ -6,5 +6,5 @@ public abstract class RobotMap {
     public static final int AUX_CONTROLLER_ID = 1;
     public static final int TEST_CONTROLLER_ID = 2;
     public static final int ELEVATOR_TALON_ID = 0;
-    public static final int COLLECTOR_TALON_ID = 0;
+    public static final int COLLECTOR_TALON_ID = 10;
 }
