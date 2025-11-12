@@ -14,3 +14,4 @@ package team.gif.robot;
  */
 public final class Constants {
     public static final double COLLECTOR_TALON_PERCENT = 0.5;
+}

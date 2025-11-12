@@ -11,4 +11,3 @@ public abstract class RobotMap {
 
     public static final int COLLECTOR_TALON_ID = 10;
 }
-.
