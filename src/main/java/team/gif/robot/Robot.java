@@ -9,6 +9,8 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
+import team.gif.robot.commands.ArcadeDrive;
+import team.gif.robot.subsystems.DriveTrain;
 import team.gif.robot.subsystems.drivers.Pigeon;
 
 /**
@@ -26,6 +28,8 @@ public class Robot extends TimedRobot {
 
   public static UI ui;
 
+  public static DriveTrain driveTrain;
+
   public static final boolean enableSwerveDebug = false;
 
   /**
@@ -36,6 +40,9 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
+    driveTrain = new DriveTrain();
+    driveTrain.setDefaultCommand(new ArcadeDrive());
+
     robotContainer = new RobotContainer();
 
     //These should be at or near the bottom
@@ -59,7 +66,7 @@ public class Robot extends TimedRobot {
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
 
-    ui.update();
+//    ui.update();
 
   }
 
