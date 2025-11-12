@@ -7,4 +7,7 @@ public abstract class RobotMap {
     public static final int TEST_CONTROLLER_ID = 2;
     public static final int LEFT_DRIVETRAIN_TALON_ID = 31;
     public static final int RIGHT_DRIVETRAIN_TALON_ID = 28;
+    public static final int ELEVATOR_TALON_ID = 1;
+
 }
+.
