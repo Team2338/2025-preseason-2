@@ -71,8 +71,6 @@ public class OI {
     public final Trigger tDPadLeft = test.povLeft();
 
     public OI() {
-        dX.whileTrue(new CollectorForward());
-        dY.whileTrue(new CollectorBackward());
         /*
          *
          * Create controller actions here
@@ -92,7 +90,9 @@ public class OI {
          *   aX.onTrue(new PrintCommand("aX"));
          */
 
-
+        //Aux Controls
+        aX.whileTrue(new CollectorForward());
+        aY.whileTrue(new CollectorBackward());
 
 
     }
