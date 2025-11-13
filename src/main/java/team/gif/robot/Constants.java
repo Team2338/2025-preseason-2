@@ -14,4 +14,15 @@ package team.gif.robot;
  */
 public final class Constants {
     public static final double COLLECTOR_TALON_PERCENT = 0.5;
+
+    public static final class Elevator{
+        public static final int PRIMARY_CLOSED_LOOP_SLOT = 0;
+        public static final int ENCODER_TIMEOUT_MS = 20;
+        public static final double kP_GAIN = 0;
+        public static final double kI_GAIN = 0;
+        public static final double kD_GAIN = 0;
+        public static final double kF_GAIN = 0;
+        public static final double ZERO_POSITION_TICKS = 0;
+        public static final double STAGE_1_POSITION_TICKS = 0;
+    }
 }
