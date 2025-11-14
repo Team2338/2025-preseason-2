@@ -4,9 +4,9 @@ import edu.wpi.first.wpilibj2.command.Command;
 import team.gif.robot.Constants;
 import team.gif.robot.Robot;
 
-public class CollectorOuttakeFast extends Command {
+public class CollectorCrateFlip extends Command {
 
-    public CollectorOuttakeFast() {
+    public CollectorCrateFlip() {
         super();
         addRequirements(Robot.collector);
     }

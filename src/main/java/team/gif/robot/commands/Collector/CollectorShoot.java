@@ -4,9 +4,9 @@ import edu.wpi.first.wpilibj2.command.Command;
 import team.gif.robot.Constants;
 import team.gif.robot.Robot;
 
-public class CollectorOuttake extends Command {
+public class CollectorShoot extends Command {
 
-    public CollectorOuttake() {
+    public CollectorShoot() {
         super();
         addRequirements(Robot.collector);
     }
@@ -18,7 +18,7 @@ public class CollectorOuttake extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        Robot.collector.moveCollector(Constants.COLLECTOR_TALON_PERCENT);
+        Robot.collector.moveCollector(-Constants.COLLECTOR_TALON_PERCENT);
 
     }
 
