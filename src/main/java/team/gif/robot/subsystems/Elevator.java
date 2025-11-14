@@ -23,7 +23,7 @@ public class Elevator extends SubsystemBase {
 
 
         elevatorMotor.configSelectedFeedbackSensor(
-                FeedbackDevice.QuadEncoder,
+                FeedbackDevice.PulseWidthEncodedPosition,
                 Constants.Elevator.PRIMARY_CLOSED_LOOP_SLOT,
                 Constants.Elevator.ENCODER_TIMEOUT_MS
         );
