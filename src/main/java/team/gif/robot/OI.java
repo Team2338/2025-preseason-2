@@ -2,9 +2,9 @@ package team.gif.robot;
 
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
-import team.gif.robot.commands.Collector.CollectorBackward;
-import team.gif.robot.commands.Collector.CollectorForward;
-import team.gif.robot.commands.ElevatorGoToStageOne;
+import team.gif.robot.commands.Collector.CollectorIntake;
+import team.gif.robot.commands.Collector.CollectorOuttake;
+import team.gif.robot.commands.Collector.CollectorOuttakeFast;
 
 public class OI {
     /*
@@ -93,8 +93,9 @@ public class OI {
 
         //Aux Controls
 //        aA.onTrue(new ElevatorGoToStageOne());
-        aX.whileTrue(new CollectorForward());
-        aY.whileTrue(new CollectorBackward());
+        aX.whileTrue(new CollectorOuttake());
+        aY.whileTrue(new CollectorIntake());
+        aB.whileTrue(new CollectorOuttakeFast());
 
 
     }

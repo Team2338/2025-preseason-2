@@ -14,6 +14,7 @@ package team.gif.robot;
  */
 public final class Constants {
     public static final double COLLECTOR_TALON_PERCENT = 0.5;
+    public static final double COLLECTOR_OUTTAKE_FAST_PERCENT = 0.8;
 
     public static final class Elevator{
         public static final int PRIMARY_CLOSED_LOOP_SLOT = 0;
