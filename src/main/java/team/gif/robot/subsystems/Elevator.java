@@ -67,7 +67,7 @@ public class Elevator extends SubsystemBase {
     }
 
     public double getElevatorPosition(){
-        return elevatorMotor.getSelectedSensorPosition(Constants.Elevator.PRIMARY_CLOSED_LOOP_SLOT);
+        return elevatorMotor.getSelectedSensorPosition();
     }
 
 }

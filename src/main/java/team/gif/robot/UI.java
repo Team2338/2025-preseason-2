@@ -25,6 +25,8 @@ public class UI {
 
     public void update() {
         SmartDashboard.putNumber("Elevator Position", Robot.elevator.getElevatorPosition());
+        SmartDashboard.putNumber("Left Drive Encoder", Robot.driveTrain.getLeftDriveEncoder());
+        SmartDashboard.putNumber("Right Drive Encoder", Robot.driveTrain.getRightDriveEncoder());
     }
 
 }
