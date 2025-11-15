@@ -4,9 +4,9 @@ import edu.wpi.first.wpilibj2.command.Command;
 import team.gif.robot.Constants;
 import team.gif.robot.Robot;
 
-public class ElevatorGoToStageOne extends Command {
+public class SetElevatorPosition extends Command {
 
-    public ElevatorGoToStageOne() {
+    public SetElevatorPosition() {
         super();
         addRequirements(Robot.elevator);
     }
@@ -24,7 +24,7 @@ public class ElevatorGoToStageOne extends Command {
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
     @Override
     public boolean isFinished() {
-        return true;
+        return false;
     }
 
     // Called when the command ends or is interrupted.

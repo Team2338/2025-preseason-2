@@ -27,7 +27,7 @@ public class Elevator extends SubsystemBase {
 
         elevatorMotor.setSelectedSensorPosition(Constants.Elevator.ZERO_POSITION_TICKS);
 
-//        elevatorMotor.setSensorPhase(true);
+        elevatorMotor.setSensorPhase(true);
 
         elevatorMotor.config_kP(
                 Constants.Elevator.PRIMARY_CLOSED_LOOP_SLOT,

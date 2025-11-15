@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 import team.gif.robot.commands.Collector.CollectorShoot;
 import team.gif.robot.commands.Collector.CollectorIntake;
 import team.gif.robot.commands.Collector.CollectorCrateFlip;
+import team.gif.robot.commands.SetElevatorPosition;
 
 public class OI {
     /*
@@ -97,7 +98,8 @@ public class OI {
         aX.whileTrue(new CollectorIntake());
         aY.whileTrue(new CollectorShoot());
         aB.whileTrue(new CollectorCrateFlip());
-        aA.onTrue(new InstantCommand(Robot.elevator::setZero));
+        aA.onTrue(new SetElevatorPosition());
+        aBack.and(aStart).onTrue(new InstantCommand(Robot.elevator::setZero));
 
 
     }
