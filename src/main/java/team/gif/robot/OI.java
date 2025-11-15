@@ -2,8 +2,8 @@ package team.gif.robot;
 
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
-import team.gif.robot.commands.Collector.CollectorBackward;
-import team.gif.robot.commands.Collector.CollectorForward;
+import team.gif.robot.commands.Collector.CollectorShoot;
+import team.gif.robot.commands.Collector.CollectorIntake;
 
 public class OI {
     /*
@@ -71,8 +71,8 @@ public class OI {
     public final Trigger tDPadLeft = test.povLeft();
 
     public OI() {
-        dX.whileTrue(new CollectorForward());
-        dY.whileTrue(new CollectorBackward());
+        dX.whileTrue(new CollectorIntake());
+        dY.whileTrue(new CollectorShoot());
         /*
          *
          * Create controller actions here

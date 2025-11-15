@@ -47,6 +47,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
+    pigeon = new Pigeon(RobotMap.PIGEON_ID);
     driveTrain = new DriveTrain();
     driveTrain.setDefaultCommand(new ArcadeDrive());
 
@@ -78,6 +79,7 @@ public class Robot extends TimedRobot {
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
 
+    Robot.driveTrain.updatePose();
 //    ui.update();
 
   }
