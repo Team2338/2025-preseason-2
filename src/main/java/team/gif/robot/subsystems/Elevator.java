@@ -18,15 +18,14 @@ public class Elevator extends SubsystemBase {
 
     public Elevator() {
         elevatorMotor = new TalonSRX(RobotMap.ELEVATOR_TALON_ID);
+
         elevatorMotor.configFactoryDefault();
+
         elevatorMotor.setNeutralMode(NeutralMode.Brake);
 
+        elevatorMotor.configSelectedFeedbackSensor(FeedbackDevice.PulseWidthEncodedPosition);
 
-        elevatorMotor.configSelectedFeedbackSensor(
-                FeedbackDevice.PulseWidthEncodedPosition,
-                Constants.Elevator.PRIMARY_CLOSED_LOOP_SLOT,
-                Constants.Elevator.ENCODER_TIMEOUT_MS
-        );
+        elevatorMotor.setSelectedSensorPosition(Constants.Elevator.ZERO_POSITION_TICKS);
 
 //        elevatorMotor.setSensorPhase(true);
 
@@ -54,7 +53,6 @@ public class Elevator extends SubsystemBase {
                 Constants.Elevator.ENCODER_TIMEOUT_MS
         );
 
-        elevatorMotor.setSelectedSensorPosition(Constants.Elevator.ZERO_POSITION_TICKS);
 
     }
 
@@ -69,5 +67,10 @@ public class Elevator extends SubsystemBase {
     public double getElevatorPosition(){
         return elevatorMotor.getSelectedSensorPosition();
     }
+
+    public void setZero(){
+        elevatorMotor.setSelectedSensorPosition(0);
+    }
+
 
 }

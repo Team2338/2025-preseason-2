@@ -1,5 +1,6 @@
 package team.gif.robot;
 
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import team.gif.robot.commands.Collector.CollectorShoot;
@@ -96,6 +97,7 @@ public class OI {
         aX.whileTrue(new CollectorIntake());
         aY.whileTrue(new CollectorShoot());
         aB.whileTrue(new CollectorCrateFlip());
+        aA.onTrue(new InstantCommand(Robot.elevator::setZero));
 
 
     }
