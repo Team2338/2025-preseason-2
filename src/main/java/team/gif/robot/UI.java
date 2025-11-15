@@ -1,8 +1,13 @@
 package team.gif.robot;
 
+import com.pathplanner.lib.auto.AutoBuilder;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj2.command.Command;
 
 public class UI {
+
+
     /**
      *  Widgets (e.g. gyro, text, True/False flags),
      *  buttons (e.g. SmartDashboard.putData("Reset", new ResetHeading()); ),
@@ -12,9 +17,7 @@ public class UI {
      *  After dashboard loads for the first time, manually move items from network table onto respective dashboard tab
      *  and save file as "YYYY elastic-layout.json"
      */
-    public UI() {
-        
-    }
+    public UI() {}
 
     /**
      * Widgets which are updated periodically should be placed here
@@ -22,10 +25,10 @@ public class UI {
      * Convenient way to format a number is to use putString w/ format:
      *     SmartDashboard.putString("Elevator", String.format("%11.2f", Elevator.getPosition());
      */
-    /**
+
     public void update() {
         //Example
         //SmartDashboard.putNumber("Climber Position", Robot.elevator.getPosition())
     }
-     **/
+
 }
