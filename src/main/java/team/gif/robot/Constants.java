@@ -22,8 +22,8 @@ public final class Constants {
         public static final double DRIVE_ENCODER_TICKS_PER_REVOLUTION = 4096;
         public static final double DRIVE_WHEEL_DIAMETER_INCHES = 5;
         public static final double DRIVE_WHEEL_CIRCUMFERENCE_METERS = Units.inchesToMeters(DRIVE_WHEEL_DIAMETER_INCHES) * Math.PI;
-        public static final double DRIVE_MOTOR_GEARING = 5.5; //Need accurate
-        public static final double DIFFERENTIAL_DRIVE_TRACKWIDTH_INCHES = 0; //Need accurate
+        public static final double DRIVE_MOTOR_GEARING = 5.5; 
+        public static final double DIFFERENTIAL_DRIVE_TRACKWIDTH_INCHES = 26;
         public static final double DIFFERENTIAL_DRIVE_TRACKWIDTH_METERS = Units.inchesToMeters(DIFFERENTIAL_DRIVE_TRACKWIDTH_INCHES);
 
     }
