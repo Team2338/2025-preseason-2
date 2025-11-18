@@ -5,12 +5,15 @@
 package team.gif.robot;
 
 import com.pathplanner.lib.auto.AutoBuilder;
+import com.pathplanner.lib.auto.NamedCommands;
 import com.pathplanner.lib.commands.PathPlannerAuto;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import team.gif.robot.commands.Collector.CollectorIntake;
+import team.gif.robot.commands.Collector.CollectorShoot;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -24,8 +27,15 @@ public class RobotContainer {
 
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer() {
+        /**
+         * TODO: Change!!! might have to make timed commands as well
+         */
+        NamedCommands.registerCommand("Run Intake", new CollectorIntake().withTimeout(1.0));
+        NamedCommands.registerCommand("Run Shooter", new CollectorShoot());
+
         // Configure the trigger bindings
         configureBindings();
+
 
         autoChooser = AutoBuilder.buildAutoChooser();
 
