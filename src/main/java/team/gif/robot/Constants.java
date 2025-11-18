@@ -16,6 +16,8 @@ import edu.wpi.first.math.util.Units;
  */
 public final class Constants {
     public static final double COLLECTOR_TALON_PERCENT = 0.5;
+    public static final int APRIL_TAG_ID_RED = 2;
+    public static final int APRIL_TAG_ID_BLUE = 3;
 
     public static final class Drivetrain{
         public static final double DIFFERENTIAL_DRIVE_ENCODER_ZERO = 0;
