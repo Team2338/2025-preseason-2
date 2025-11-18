@@ -1,5 +1,6 @@
 package team.gif.robot;
 
+import edu.wpi.first.wpilibj2.command.ConditionalCommand;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -98,7 +99,7 @@ public class OI {
         aX.whileTrue(new CollectorIntake());
         aY.whileTrue(new CollectorShoot());
         aB.whileTrue(new CollectorCrateFlip());
-        aA.onTrue(new SetElevatorPosition());
+        aDPadUp.onTrue(new SetElevatorPosition(Constants.Elevator.STAGE_1_POSITION_TICKS));
         aBack.and(aStart).onTrue(new InstantCommand(Robot.elevator::setZero));
 
 

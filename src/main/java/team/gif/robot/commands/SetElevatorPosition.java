@@ -6,15 +6,20 @@ import team.gif.robot.Robot;
 
 public class SetElevatorPosition extends Command {
 
-    public SetElevatorPosition() {
+    double setpoint = 0;
+
+    public SetElevatorPosition(double inputPosition) {
         super();
         addRequirements(Robot.elevator);
+
+         setpoint = inputPosition;
+
     }
 
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
-        Robot.elevator.setSetpoint(Constants.Elevator.STAGE_1_POSITION_TICKS);
+        Robot.elevator.setSetpoint(setpoint);
     }
 
     // Called every time the scheduler runs (~20ms) while the command is scheduled
@@ -24,7 +29,7 @@ public class SetElevatorPosition extends Command {
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
     @Override
     public boolean isFinished() {
-        return false;
+        return Robot.elevator.atSetpoint(setpoint);
     }
 
     // Called when the command ends or is interrupted.

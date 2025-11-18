@@ -31,6 +31,6 @@ public class CollectorCrateFlip extends Command {
     // Called when the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        Robot.collector.moveCollector(0);
+        Robot.collector.stopCollector();
     }
 }

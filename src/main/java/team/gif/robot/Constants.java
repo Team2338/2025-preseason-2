@@ -22,8 +22,10 @@ public final class Constants {
         public static final double kP_GAIN = 0.08;
         public static final double kI_GAIN = 0.0;
         public static final double kD_GAIN = 0.0;
-        public static final double kF_GAIN = 0.001;
-        public static final double ZERO_POSITION_TICKS = 0;
-        public static final double STAGE_1_POSITION_TICKS = -2000;
+        public static final double kF_GAIN = 0.1;
+        public static final double STAGE_1_POSITION_TICKS = 2000;
+        public static final double REVERSE_SOFT_LIMIT_THRESHOLD_TICKS = 0;
+        public static final double FORWARD_SOFT_LIMIT_THRESHOLD_TICKS = 12000;
+        public static final double SETPOINT_TOLERANCE_TICKS = 200;
     }
 }
