@@ -30,7 +30,7 @@ public class RobotContainer {
         /**
          * TODO: Change!!! might have to make timed commands as well
          */
-        NamedCommands.registerCommand("Run Intake", new CollectorIntake().withTimeout(1.0));
+        NamedCommands.registerCommand("Run Intake", new CollectorIntake());
         NamedCommands.registerCommand("Run Shooter", new CollectorShoot());
 
         // Configure the trigger bindings

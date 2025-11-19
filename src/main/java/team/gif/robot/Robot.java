@@ -47,18 +47,18 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
+    collector = new Collector();
     pigeon = new Pigeon(RobotMap.PIGEON_ID);
     driveTrain = new DriveTrain();
     driveTrain.setDefaultCommand(new ArcadeDrive());
 
-    robotContainer = new RobotContainer();
-    collector = new Collector();
 
 
     elevator = new Elevator();
     elevator.setDefaultCommand(new TalonMotorElevatorJoystick());
 
     //These should be at or near the bottom
+    robotContainer = new RobotContainer();
     oi = new OI();
     ui = new UI();
 
