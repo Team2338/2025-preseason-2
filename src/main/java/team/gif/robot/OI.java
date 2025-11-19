@@ -1,5 +1,6 @@
 package team.gif.robot;
 
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import team.gif.robot.commands.Collector.CollectorShoot;
@@ -91,6 +92,8 @@ public class OI {
          * Simple Test:
          *   aX.onTrue(new PrintCommand("aX"));
          */
+
+        aBack.and(aLStickBtn).onTrue(new InstantCommand(Robot.pigeon::resetPigeonPosition));
 
 
 
