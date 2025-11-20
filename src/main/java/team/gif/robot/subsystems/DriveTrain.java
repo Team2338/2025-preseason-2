@@ -52,12 +52,25 @@ public class DriveTrain extends SubsystemBase {
         leftMotor.setNeutralMode(NeutralMode.Brake);
         rightMotor.setNeutralMode(NeutralMode.Brake);
 
+
         /**
          * Configure encoder type
          * CTRE Mag Encoder for both drivetrain motors
          */
         leftMotor.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative);
         rightMotor.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative);
+
+        /**
+         * Set up PID for the left and right motors
+         */
+        leftMotor.config_kP(Constants.Drivetrain.PRIMARY_CLOSED_LOOP_SLOT, Constants.Drivetrain.LEFT_kP);
+        leftMotor.config_kI(Constants.Drivetrain.PRIMARY_CLOSED_LOOP_SLOT, Constants.Drivetrain.LEFT_kI);
+        leftMotor.config_kD(Constants.Drivetrain.PRIMARY_CLOSED_LOOP_SLOT, Constants.Drivetrain.LEFT_kD);
+        leftMotor.config_kF(Constants.Drivetrain.PRIMARY_CLOSED_LOOP_SLOT, Constants.Drivetrain.LEFT_kF);
+        rightMotor.config_kP(Constants.Drivetrain.PRIMARY_CLOSED_LOOP_SLOT, Constants.Drivetrain.RIGHT_kP);
+        rightMotor.config_kI(Constants.Drivetrain.PRIMARY_CLOSED_LOOP_SLOT, Constants.Drivetrain.RIGHT_kI);
+        rightMotor.config_kD(Constants.Drivetrain.PRIMARY_CLOSED_LOOP_SLOT, Constants.Drivetrain.RIGHT_kD);
+        rightMotor.config_kF(Constants.Drivetrain.PRIMARY_CLOSED_LOOP_SLOT, Constants.Drivetrain.RIGHT_kF);
 
         /**
          * Zero encoders on robot startup

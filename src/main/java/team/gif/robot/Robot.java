@@ -14,6 +14,7 @@ import team.gif.robot.subsystems.Elevator;
 import team.gif.robot.commands.ArcadeDrive;
 import team.gif.robot.subsystems.DriveTrain;
 import team.gif.robot.subsystems.Collector;
+import team.gif.robot.subsystems.drivers.Photon;
 import team.gif.robot.subsystems.drivers.Pigeon;
 
 /**
@@ -37,9 +38,12 @@ public class Robot extends TimedRobot {
 
   public static DriveTrain driveTrain;
 
+  public static Photon photon;
+
   public static final boolean enableSwerveDebug = false;
 
   public static double matchTime;
+
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -50,6 +54,7 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.C
     CameraServer.startAutomaticCapture();
+    photon = new Photon("camera1");
     collector = new Collector();
     pigeon = new Pigeon(RobotMap.PIGEON_ID);
     driveTrain = new DriveTrain();

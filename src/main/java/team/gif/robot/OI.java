@@ -3,6 +3,7 @@ package team.gif.robot;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import team.gif.robot.commands.AlignToAprilTag;
 import team.gif.robot.commands.Collector.CollectorShoot;
 import team.gif.robot.commands.Collector.CollectorIntake;
 import team.gif.robot.commands.Collector.CollectorCrateFlip;
@@ -95,13 +96,14 @@ public class OI {
 
         //Driver Controls
         dBack.and(dLStickBtn).onTrue(new InstantCommand(Robot.pigeon::resetPigeonPosition));
+        dA.onTrue(new AlignToAprilTag());
 
         //Aux Controls
         aX.whileTrue(new CollectorIntake());
         aY.whileTrue(new CollectorShoot());
         aB.whileTrue(new CollectorCrateFlip());
         aDPadUp.onTrue(new SetElevatorPosition(Constants.Elevator.STAGE_1_POSITION_TICKS));
-        aDPadDown.onTrue(new SetElevatorPosition(0));
+        aDPadDown.onTrue(new SetElevatorPosition(Constants.Elevator.STAGE_0_POSITION_TICKS));
         aBack.and(aStart).onTrue(new InstantCommand(Robot.elevator::setZero));
 
 

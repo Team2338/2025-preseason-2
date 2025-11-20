@@ -12,8 +12,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import team.gif.robot.commands.AlignToAprilTag;
 import team.gif.robot.commands.Collector.CollectorIntake;
 import team.gif.robot.commands.Collector.CollectorShoot;
+import team.gif.robot.commands.Elevator.SetElevatorPosition;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -32,6 +34,9 @@ public class RobotContainer {
          */
         NamedCommands.registerCommand("Run Intake", new CollectorIntake());
         NamedCommands.registerCommand("Run Shooter", new CollectorShoot());
+        NamedCommands.registerCommand("Elevator Stage 1", new SetElevatorPosition(Constants.Elevator.STAGE_1_POSITION_TICKS));
+        NamedCommands.registerCommand("Elevator Stage 0", new SetElevatorPosition(Constants.Elevator.STAGE_0_POSITION_TICKS));
+        NamedCommands.registerCommand("Align", new AlignToAprilTag());
 
         // Configure the trigger bindings
         configureBindings();
