@@ -1,6 +1,7 @@
 package team.gif.robot;
 
 import com.pathplanner.lib.auto.AutoBuilder;
+import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -27,9 +28,12 @@ public class UI {
      */
 
     public void update() {
-        SmartDashboard.putNumber("Elevator Position", Robot.elevator.getElevatorPosition());
-        SmartDashboard.putNumber("Left Drive Encoder", Robot.driveTrain.getLeftDriveEncoder());
-        SmartDashboard.putNumber("Right Drive Encoder", Robot.driveTrain.getRightDriveEncoder());
+        SmartDashboard.putString("Elevator Position", String.format("%38.5f", Robot.elevator.getElevatorPosition()));
+        SmartDashboard.putString("Left Drive Encoder", String.format("%38.5f", Robot.driveTrain.getLeftDriveEncoder()));
+        SmartDashboard.putString("Right Drive Encoder", String.format("%38.5f", Robot.driveTrain.getRightDriveEncoder()));
+        SmartDashboard.putNumber("Match Time", Robot.matchTime);
+        SmartDashboard.putNumber("Battery Voltage", RobotController.getBatteryVoltage());
+
     }
 
 }

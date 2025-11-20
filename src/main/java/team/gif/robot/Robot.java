@@ -4,12 +4,12 @@
 
 package team.gif.robot;
 
+import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import team.gif.lib.logging.EventFileLogger;
-import team.gif.lib.logging.TelemetryFileLogger;
-import team.gif.robot.commands.TalonMotorElevatorJoystick;
+import team.gif.robot.commands.Elevator.TalonMotorElevatorJoystick;
 import team.gif.robot.subsystems.Elevator;
 import team.gif.robot.commands.ArcadeDrive;
 import team.gif.robot.subsystems.DriveTrain;
@@ -39,6 +39,8 @@ public class Robot extends TimedRobot {
 
   public static final boolean enableSwerveDebug = false;
 
+  public static double matchTime;
+
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -46,12 +48,12 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
-    // autonomous chooser on the dashboard.
+    // autonomous chooser on the dashboard.C
+    CameraServer.startAutomaticCapture();
     collector = new Collector();
     pigeon = new Pigeon(RobotMap.PIGEON_ID);
     driveTrain = new DriveTrain();
     driveTrain.setDefaultCommand(new ArcadeDrive());
-
 
 
     elevator = new Elevator();
@@ -61,6 +63,7 @@ public class Robot extends TimedRobot {
     robotContainer = new RobotContainer();
     oi = new OI();
     ui = new UI();
+    pigeon.addToDashboard("Gyro");
 
   }
 
@@ -79,10 +82,8 @@ public class Robot extends TimedRobot {
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
     ui.update();
-
     Robot.driveTrain.updatePose();
-//    ui.update();
-
+    matchTime = DriverStation.getMatchTime();
   }
 
   /** This function is called once each time the robot enters Disabled mode. */

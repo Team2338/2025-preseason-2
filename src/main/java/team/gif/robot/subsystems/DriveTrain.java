@@ -56,14 +56,12 @@ public class DriveTrain extends SubsystemBase {
          * Configure encoder type
          * CTRE Mag Encoder for both drivetrain motors
          */
-
         leftMotor.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative);
         rightMotor.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative);
 
         /**
          * Zero encoders on robot startup
          */
-
         leftMotor.setSelectedSensorPosition(Constants.Drivetrain.DIFFERENTIAL_DRIVE_ENCODER_ZERO);
         rightMotor.setSelectedSensorPosition(Constants.Drivetrain.DIFFERENTIAL_DRIVE_ENCODER_ZERO);
 
@@ -71,7 +69,6 @@ public class DriveTrain extends SubsystemBase {
          * Create a kinematics object with a track width
          * defined in Constants.java
          */
-
         driveKinematics = new DifferentialDriveKinematics(Constants.Drivetrain.DIFFERENTIAL_DRIVE_TRACKWIDTH_METERS);
 
         /**
@@ -93,7 +90,6 @@ public class DriveTrain extends SubsystemBase {
          * Pathplanner autobuilder setup, read the docs for more info
          * {@link https://pathplanner.dev/pplib-build-an-auto.html#load-an-auto}
          */
-
         RobotConfig config = null;
         try{
             config = RobotConfig.fromGUISettings();
@@ -126,10 +122,8 @@ public class DriveTrain extends SubsystemBase {
      * @param rotation rotation percent
      * @param speed speed percent
      */
-    public void arcadeDrivePercent(double rotation, double speed){
+    public void arcadeDrivePercent(double rotation, double speed) {
         drive.arcadeDrive(rotation, speed);
-    public double getLeftDriveEncoder(){
-        return leftMotor.getSelectedSensorPosition();
     }
 
     /**
@@ -141,6 +135,19 @@ public class DriveTrain extends SubsystemBase {
         leftMotor.set(ControlMode.Velocity, getEncoderVelocityFromWheelVelocity(leftVelocity));
         rightMotor.set(ControlMode.Velocity, getEncoderVelocityFromWheelVelocity(rightVelocity));
     }
+
+    /**
+     * Get the position of the left drive encoder
+     * @return position of the encoder in native units
+     */
+    public double getLeftDriveEncoder(){
+        return leftMotor.getSelectedSensorPosition();
+    }
+
+    /**
+     * Get the position of the right drive encoder
+     * @return position of the encoder in native units
+     */
     public double getRightDriveEncoder(){
         return rightMotor.getSelectedSensorPosition();
     }
@@ -154,7 +161,6 @@ public class DriveTrain extends SubsystemBase {
         double wheelRevolutions = motorRevolutions / Constants.Drivetrain.DRIVE_MOTOR_GEARING;
         return wheelRevolutions * Constants.Drivetrain.DRIVE_WHEEL_CIRCUMFERENCE_METERS;
     }
-
 
     /**
      * @param motorVelocity the measured velocity of the encoder in native units per 100ms
@@ -176,7 +182,6 @@ public class DriveTrain extends SubsystemBase {
         return (motorRevolutionsPerSecond * Constants.Drivetrain.DRIVE_ENCODER_TICKS_PER_REVOLUTION) / 10;
     }
 
-
     /**
      * Use the driveKinematics object to convert left and right wheel speeds (in m/s)
      * to a ChassisSpeeds object
@@ -187,11 +192,8 @@ public class DriveTrain extends SubsystemBase {
                 getWheelVelocityMeters(leftMotor.getSelectedSensorVelocity()),
                 getWheelVelocityMeters(rightMotor.getSelectedSensorVelocity())
         );
-
         chassisSpeeds = driveKinematics.toChassisSpeeds(wheelSpeeds);
-
         return chassisSpeeds;
-
     }
 
     /**
@@ -234,8 +236,4 @@ public class DriveTrain extends SubsystemBase {
                 pose
         );
     }
-
-
-
-
 }
