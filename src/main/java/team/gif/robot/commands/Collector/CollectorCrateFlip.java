@@ -1,13 +1,14 @@
-package team.gif.robot.commands;
+package team.gif.robot.commands.Collector;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import team.gif.robot.Constants;
 import team.gif.robot.Robot;
 
-public class ArcadeDrive extends Command {
+public class CollectorCrateFlip extends Command {
 
-    public ArcadeDrive() {
+    public CollectorCrateFlip() {
         super();
-        addRequirements(Robot.driveTrain); // uncomment
+        addRequirements(Robot.collector);
     }
 
     // Called when the command is initially scheduled.
@@ -17,9 +18,8 @@ public class ArcadeDrive extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        double speed = Robot.oi.driver.getLeftY();
-        double rotation = Robot.oi.driver.getRightX();
-        Robot.driveTrain.arcadeDrivePercent(rotation, speed);
+        Robot.collector.moveCollector(-Constants.COLLECTOR_OUTTAKE_FAST_PERCENT);
+
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
@@ -30,5 +30,7 @@ public class ArcadeDrive extends Command {
 
     // Called when the command ends or is interrupted.
     @Override
-    public void end(boolean interrupted) {}
+    public void end(boolean interrupted) {
+        Robot.collector.stopCollector();
+    }
 }

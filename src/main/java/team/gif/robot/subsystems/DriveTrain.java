@@ -128,6 +128,8 @@ public class DriveTrain extends SubsystemBase {
      */
     public void arcadeDrivePercent(double rotation, double speed){
         drive.arcadeDrive(rotation, speed);
+    public double getLeftDriveEncoder(){
+        return leftMotor.getSelectedSensorPosition();
     }
 
     /**
@@ -138,6 +140,9 @@ public class DriveTrain extends SubsystemBase {
     public void arcadeDriveVelocity(double leftVelocity, double rightVelocity) {
         leftMotor.set(ControlMode.Velocity, getEncoderVelocityFromWheelVelocity(leftVelocity));
         rightMotor.set(ControlMode.Velocity, getEncoderVelocityFromWheelVelocity(rightVelocity));
+    }
+    public double getRightDriveEncoder(){
+        return rightMotor.getSelectedSensorPosition();
     }
 
     /**

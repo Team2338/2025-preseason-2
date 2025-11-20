@@ -21,9 +21,19 @@ public class Collector extends SubsystemBase {
     }
 
 
+    /**
+     * Move the collector using percent control mode
+     * @param percentOutput a double from -1.0 to 1.0 indicating applied percent
+     */
     public void moveCollector(double percentOutput){
         collectorMotor.set(TalonSRXControlMode.PercentOutput, percentOutput);
+    }
 
+    /**
+     * Stop the collector when called
+     */
+    public void stopCollector(){
+        collectorMotor.set(TalonSRXControlMode.PercentOutput, 0);
     }
 }
 

@@ -9,7 +9,6 @@ public class CollectorIntake extends Command {
     public CollectorIntake() {
         super();
         addRequirements(Robot.collector);
-        //addRequirements(Robot.climber); // uncomment
     }
 
     // Called when the command is initially scheduled.
@@ -32,6 +31,6 @@ public class CollectorIntake extends Command {
     // Called when the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        Robot.collector.moveCollector(0);
+        Robot.collector.stopCollector();
     }
 }

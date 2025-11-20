@@ -1,10 +1,13 @@
 package team.gif.robot;
 
+import edu.wpi.first.wpilibj2.command.ConditionalCommand;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import team.gif.robot.commands.Collector.CollectorShoot;
 import team.gif.robot.commands.Collector.CollectorIntake;
+import team.gif.robot.commands.Collector.CollectorCrateFlip;
+import team.gif.robot.commands.SetElevatorPosition;
 
 public class OI {
     /*
@@ -72,8 +75,6 @@ public class OI {
     public final Trigger tDPadLeft = test.povLeft();
 
     public OI() {
-        dX.whileTrue(new CollectorIntake());
-        dY.whileTrue(new CollectorShoot());
         /*
          *
          * Create controller actions here
@@ -93,9 +94,14 @@ public class OI {
          *   aX.onTrue(new PrintCommand("aX"));
          */
 
+        //Aux Controls
+//        aA.onTrue(new ElevatorGoToStageOne());
+        aX.whileTrue(new CollectorIntake());
+        aY.whileTrue(new CollectorShoot());
+        aB.whileTrue(new CollectorCrateFlip());
+        aDPadUp.onTrue(new SetElevatorPosition(Constants.Elevator.STAGE_1_POSITION_TICKS));
+        aBack.and(aStart).onTrue(new InstantCommand(Robot.elevator::setZero));
         aBack.and(aLStickBtn).onTrue(new InstantCommand(Robot.pigeon::resetPigeonPosition));
-
-
 
 
     }

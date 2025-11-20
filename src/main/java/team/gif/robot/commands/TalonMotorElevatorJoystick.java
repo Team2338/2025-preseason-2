@@ -19,7 +19,7 @@ public class TalonMotorElevatorJoystick extends Command {
     @Override
     public void execute() {
         double joystickPercent = Robot.oi.aux.getLeftY();
-        Robot.elevator.moveElevator(joystickPercent);
+        Robot.elevator.moveElevator(-joystickPercent);
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.

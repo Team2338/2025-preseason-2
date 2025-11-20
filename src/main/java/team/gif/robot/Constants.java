@@ -28,5 +28,16 @@ public final class Constants {
         public static final double DIFFERENTIAL_DRIVE_TRACKWIDTH_INCHES = 26;
         public static final double DIFFERENTIAL_DRIVE_TRACKWIDTH_METERS = Units.inchesToMeters(DIFFERENTIAL_DRIVE_TRACKWIDTH_INCHES);
 
+    public static final class Elevator{
+        public static final int PRIMARY_CLOSED_LOOP_SLOT = 0;
+        public static final int ENCODER_TIMEOUT_MS = 30;
+        public static final double kP_GAIN = 0.045;
+        public static final double kI_GAIN = 0.0;
+        public static final double kD_GAIN = 0.0;
+        public static final double kF_GAIN = 0.030;
+        public static final double STAGE_1_POSITION_TICKS = 21500;
+        public static final double REVERSE_SOFT_LIMIT_THRESHOLD_TICKS = -150;
+        public static final double FORWARD_SOFT_LIMIT_THRESHOLD_TICKS = 22000;
+        public static final double SETPOINT_TOLERANCE_TICKS = 200;
     }
 }
