@@ -1,14 +1,14 @@
-package team.gif.robot.commands;
+package team.gif.robot.commands.Collector;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import team.gif.robot.Constants;
 import team.gif.robot.Robot;
 
-public class TalonMotorElevatorJoystick extends Command {
+public class CollectorCrateFlip extends Command {
 
-    public TalonMotorElevatorJoystick() {
+    public CollectorCrateFlip() {
         super();
-        addRequirements(Robot.elevator);
+        addRequirements(Robot.collector);
     }
 
     // Called when the command is initially scheduled.
@@ -18,8 +18,8 @@ public class TalonMotorElevatorJoystick extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        double joystickPercent = Robot.oi.aux.getLeftY();
-        Robot.elevator.moveElevator(-joystickPercent);
+        Robot.collector.moveCollector(-Constants.COLLECTOR_OUTTAKE_FAST_PERCENT);
+
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
@@ -30,5 +30,7 @@ public class TalonMotorElevatorJoystick extends Command {
 
     // Called when the command ends or is interrupted.
     @Override
-    public void end(boolean interrupted) {}
+    public void end(boolean interrupted) {
+        Robot.collector.stopCollector();
+    }
 }

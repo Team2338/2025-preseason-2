@@ -4,6 +4,7 @@
 
 package team.gif.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
@@ -30,13 +31,26 @@ public class DriveTrain extends SubsystemBase {
         leftMotor.setNeutralMode(NeutralMode.Brake);
         rightMotor.setNeutralMode(NeutralMode.Brake);
 
-        drive = new DifferentialDrive(leftMotor, rightMotor);
+        leftMotor.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative);
+        rightMotor.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative);
 
+        rightMotor.setSelectedSensorPosition(0);
+        leftMotor.setSelectedSensorPosition(0);
+
+        drive = new DifferentialDrive(leftMotor, rightMotor);
 
     }
 
-    public void arcadeDrive(double speed, double rotation){
-        drive.arcadeDrive(speed, rotation);
+    public void arcadeDrive(double rotation, double speed){
+        drive.arcadeDrive(rotation, speed);
+    }
+
+    public double getLeftDriveEncoder(){
+        return leftMotor.getSelectedSensorPosition();
+    }
+
+    public double getRightDriveEncoder(){
+        return rightMotor.getSelectedSensorPosition();
     }
 
 

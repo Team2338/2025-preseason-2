@@ -4,12 +4,11 @@ import edu.wpi.first.wpilibj2.command.Command;
 import team.gif.robot.Constants;
 import team.gif.robot.Robot;
 
-public class CollectorForward extends Command {
+public class CollectorIntake extends Command {
 
-    public CollectorForward() {
+    public CollectorIntake() {
         super();
         addRequirements(Robot.collector);
-        //addRequirements(Robot.climber); // uncomment
     }
 
     // Called when the command is initially scheduled.
@@ -32,6 +31,6 @@ public class CollectorForward extends Command {
     // Called when the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        Robot.collector.moveCollector(0);
+        Robot.collector.stopCollector();
     }
 }

@@ -22,10 +22,11 @@ public class UI {
      * Convenient way to format a number is to use putString w/ format:
      *     SmartDashboard.putString("Elevator", String.format("%11.2f", Elevator.getPosition());
      */
-    /**
+
     public void update() {
-        //Example
-        //SmartDashboard.putNumber("Climber Position", Robot.elevator.getPosition())
+        SmartDashboard.putNumber("Elevator Position", Robot.elevator.getElevatorPosition());
+        SmartDashboard.putNumber("Left Drive Encoder", Robot.driveTrain.getLeftDriveEncoder());
+        SmartDashboard.putNumber("Right Drive Encoder", Robot.driveTrain.getRightDriveEncoder());
     }
-     **/
+
 }
