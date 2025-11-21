@@ -249,4 +249,12 @@ public class DriveTrain extends SubsystemBase {
                 pose
         );
     }
+    public double driveMeters2Ticks(double targetMeters){
+        return Constants.Drive.SRX_ENCODER_METERS_IN_TICKS * targetMeters;
+    }
+
+    public boolean atTarget(double target){
+        return leftMotor.getSelectedSensorPosition() >= target && rightMotor.getSelectedSensorPosition() >= target;
+    }
+
 }

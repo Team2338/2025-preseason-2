@@ -5,9 +5,13 @@ import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
+import team.gif.robot.commands.BlueAuto;
+import team.gif.robot.commands.MainAuto;
+import team.gif.robot.commands.No;
+import team.gif.robot.commands.RedAuto;
 
 public class UI {
-
+    public SendableChooser<Command> autoChooser = new SendableChooser<>();
 
     /**
      *  Widgets (e.g. gyro, text, True/False flags),
@@ -18,7 +22,13 @@ public class UI {
      *  After dashboard loads for the first time, manually move items from network table onto respective dashboard tab
      *  and save file as "YYYY elastic-layout.json"
      */
-    public UI() {}
+    public UI() {
+        autoChooser.setDefaultOption("No Auto", null);
+        autoChooser.addOption("red", new RedAuto());
+        autoChooser.addOption("main PICK THIS ONE THIS ONE WORKS, drive forward flip", new MainAuto();
+        SmartDashboard.putData("Auto", autoChooser);
+
+    }
 
     /**
      * Widgets which are updated periodically should be placed here

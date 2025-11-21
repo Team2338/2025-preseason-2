@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.robot.commands.Elevator.TalonMotorElevatorJoystick;
+import team.gif.robot.commands.RedAuto;
 import team.gif.robot.subsystems.Elevator;
 import team.gif.robot.commands.ArcadeDrive;
 import team.gif.robot.subsystems.DriveTrain;
@@ -69,6 +70,7 @@ public class Robot extends TimedRobot {
     oi = new OI();
     ui = new UI();
     pigeon.addToDashboard("Gyro");
+    autonomousCommand = new RedAuto();
 
   }
 
@@ -105,7 +107,7 @@ public class Robot extends TimedRobot {
        * Gets the chosen autonomouscommand from the autochooser
        * and checks if an auto is selected before scheduling autos
        */
-      autonomousCommand =  robotContainer.getAutonomousCommand();
+      autonomousCommand =
 
       if(autonomousCommand != null){
           autonomousCommand.schedule();
@@ -123,7 +125,7 @@ public class Robot extends TimedRobot {
     // continue until interrupted by another command, remove
     // this line or comment it out.
 
-
+        autonomousCommand = ui.autoChooser.getSelected();
     if (autonomousCommand != null) {
       autonomousCommand.cancel();
     }

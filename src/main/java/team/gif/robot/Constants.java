@@ -61,5 +61,13 @@ public final class Constants {
         public static final double FORWARD_SOFT_LIMIT_THRESHOLD_TICKS = 22000;
         public static final double SETPOINT_TOLERANCE_TICKS = 200;
     }
-
-}
+    public static final class Autos {
+        public static final double AUTO_TAGET_METERS = 4.5;
+        public static final double AUTO_TAGET_METERS2 = 0.5;
+        public static final double AUTO_DRIVE_METER_PERC = 0.5;
+    }
+    public static final class Drive {
+        public static final double SRX_ENCODER_METERS_PER_TICK = (Math.PI*0.127)/4096;
+        public static final double SRX_ENCODER_METERS_IN_TICKS = 1/(Math.PI*0.127)%4096;
+    }
+    }
