@@ -36,12 +36,29 @@ public class Photon extends SubsystemBase {
         return false;
     }
 
+    public double getDistance(int targetID){
+        var results = camera.getAllUnreadResults();
+        if(!results.isEmpty()){
+            var latest = results.get(results.size() - 1);
+            if(latest.hasTargets()){
+                for(var target : latest.getTargets()){
+                    if (target.getFiducialId() == targetID) {
+                        return target.getBestCameraToTarget().getTranslation().getNorm();
+                    }
+                }
+            }
+        }
+        return 0;
+    }
     /**
      * @param targetID the ID of the desired target's yaw
      * @return the desired target's yaw
      */
     public double getTargetYaw(int targetID) {
         double targetYaw = 0.0;
+        double distance = 0.0;
+        double offsetAngle = 0.0;
+        double realYaw = 0.0;
         var results = camera.getAllUnreadResults();
         if(!results.isEmpty()){
             var latest = results.get(results.size() - 1);
@@ -49,11 +66,14 @@ public class Photon extends SubsystemBase {
                 for(var target : latest.getTargets()){
                     if (target.getFiducialId() == targetID) {
                         targetYaw = target.getYaw();
+                        distance = getDistance(targetID);
+                        offsetAngle = Math.toDegrees(Math.atan2(Constants.Photon.CAMERA_OFFSET_X_METERS, distance));
+                        realYaw = targetYaw + offsetAngle;
                     }
                 }
             }
         }
-        return targetYaw;
+        return realYaw;
     }
 
     /**
