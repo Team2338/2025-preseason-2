@@ -1,14 +1,11 @@
 package team.gif.robot;
 
-import com.pathplanner.lib.auto.AutoBuilder;
 import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
-import team.gif.robot.commands.BlueAuto;
-import team.gif.robot.commands.MainAuto;
-import team.gif.robot.commands.No;
-import team.gif.robot.commands.RedAuto;
+import team.gif.robot.commands.Autos.MainAuto;
+import team.gif.robot.commands.Autos.RedAuto;
 
 public class UI {
     public SendableChooser<Command> autoChooser = new SendableChooser<>();
@@ -25,7 +22,7 @@ public class UI {
     public UI() {
         autoChooser.setDefaultOption("No Auto", null);
         autoChooser.addOption("red", new RedAuto());
-        autoChooser.addOption("main PICK THIS ONE THIS ONE WORKS, drive forward flip", new MainAuto();
+        autoChooser.addOption("main PICK THIS ONE THIS ONE WORKS, drive forward flip", new MainAuto());
         SmartDashboard.putData("Auto", autoChooser);
 
     }

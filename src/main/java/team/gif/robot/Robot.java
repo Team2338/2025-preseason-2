@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.robot.commands.Elevator.TalonMotorElevatorJoystick;
-import team.gif.robot.commands.RedAuto;
+import team.gif.robot.commands.Autos.RedAuto;
 import team.gif.robot.subsystems.Elevator;
 import team.gif.robot.commands.ArcadeDrive;
 import team.gif.robot.subsystems.DriveTrain;
@@ -107,7 +107,7 @@ public class Robot extends TimedRobot {
        * Gets the chosen autonomouscommand from the autochooser
        * and checks if an auto is selected before scheduling autos
        */
-      autonomousCommand =
+      autonomousCommand = ui.autoChooser.getSelected();
 
       if(autonomousCommand != null){
           autonomousCommand.schedule();

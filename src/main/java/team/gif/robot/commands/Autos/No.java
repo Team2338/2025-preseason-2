@@ -1,10 +1,10 @@
-package team.gif.robot.commands;
+package team.gif.robot.commands.Autos;
 
 import edu.wpi.first.wpilibj2.command.Command;
 
-public class CommandTemplate extends Command {
+public class No extends Command {
 
-    public CommandTemplate() {
+    public No() {
         super();
         //addRequirements(Robot.climber); // uncomment
     }

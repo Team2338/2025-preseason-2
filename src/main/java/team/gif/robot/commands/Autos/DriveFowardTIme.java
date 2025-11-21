@@ -1,15 +1,15 @@
-package team.gif.robot.commands;
+package team.gif.robot.commands.Autos;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import team.gif.robot.Constants;
 import team.gif.robot.Robot;
 
-public class DriveFowardTIme2 extends Command {
+public class DriveFowardTIme extends Command {
 
     private double setpoint = 0.0;
     private int time =0;
 
-    public DriveFowardTIme2() {
+    public DriveFowardTIme() {
         super();
         addRequirements(Robot.driveTrain); // uncomment
     }
@@ -29,7 +29,7 @@ public class DriveFowardTIme2 extends Command {
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
     @Override
     public boolean isFinished() {
-        return time>=45;
+        return time>=100;
     }
 
     // Called when the command ends or is interrupted.
