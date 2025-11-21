@@ -36,8 +36,8 @@ private int targetID;
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        if(Robot.photon.hasTarget(targetID)){
             Robot.photon.alignToTarget(targetID);
+        if(Robot.photon.hasTarget(targetID)){
         }
         else{
             Robot.driveTrain.arcadeDrivePercent(0,0);

@@ -6,7 +6,7 @@ import team.gif.robot.commands.Collector.CollectorCrateFlip;
 public class MainAuto extends SequentialCommandGroup {
     public MainAuto() {
         addCommands(
-                new DriveFoward(),
+                new DriveFowardTIme(),
                 new CollectorCrateFlip().withTimeout(2)
         );
 

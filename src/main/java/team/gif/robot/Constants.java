@@ -20,11 +20,11 @@ public final class Constants {
 
 
     public static final class Photon {
-        public static final double PHOTON_ALIGN_kP = 0.3;
-        public static final double PHOTON_YAW_TOLERANCE = 20;
-        public static final int APRIL_TAG_ID_RED = 2;
-        public static final int APRIL_TAG_ID_BLUE = 3;
-        public static final int APRIL_TAG_ID_MANUAL = 2;
+        public static final double PHOTON_ALIGN_kP = 10;
+        public static final double PHOTON_YAW_TOLERANCE = 1;
+        public static final int APRIL_TAG_ID_RED = 1;
+        public static final int APRIL_TAG_ID_BLUE = 1;
+        public static final int APRIL_TAG_ID_MANUAL = 1;
         public static final double CAMERA_OFFSET_X_INCHES = 11;
         public static final double CAMERA_OFFSET_X_METERS = Units.inchesToMeters(CAMERA_OFFSET_X_INCHES);
     }
@@ -64,7 +64,7 @@ public final class Constants {
     public static final class Autos {
         public static final double AUTO_TAGET_METERS = 4.5;
         public static final double AUTO_TAGET_METERS2 = 0.5;
-        public static final double AUTO_DRIVE_METER_PERC = 0.5;
+        public static final double AUTO_DRIVE_METER_PERC = 0.65;
     }
     public static final class Drive {
         public static final double SRX_ENCODER_METERS_PER_TICK = (Math.PI*0.127)/4096;

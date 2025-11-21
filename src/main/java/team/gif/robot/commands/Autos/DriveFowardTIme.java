@@ -17,19 +17,20 @@ public class DriveFowardTIme extends Command {
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
+        time = 0;
     }
 
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        Robot.driveTrain.arcadeDrivePercent(0,Constants.Autos.AUTO_DRIVE_METER_PERC);
+        Robot.driveTrain.arcadeDrivePercent(0,-Constants.Autos.AUTO_DRIVE_METER_PERC);
         time++;
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
     @Override
     public boolean isFinished() {
-        return time>=100;
+        return time>=145;
     }
 
     // Called when the command ends or is interrupted.

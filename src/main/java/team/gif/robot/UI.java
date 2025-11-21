@@ -35,7 +35,7 @@ public class UI {
      */
 
     public void update() {
-        SmartDashboard.putString("Elevator Position", String.format("%38.5f", Robot.elevator.getElevatorPosition()));
+        SmartDashboard.putNumber("Elevator Position", Robot.elevator.getElevatorPosition());
         SmartDashboard.putString("Left Drive Encoder", String.format("%38.5f", Robot.driveTrain.getLeftDriveEncoder()));
         SmartDashboard.putString("Right Drive Encoder", String.format("%38.5f", Robot.driveTrain.getRightDriveEncoder()));
         SmartDashboard.putNumber("Match Time", Robot.matchTime);
