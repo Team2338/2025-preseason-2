@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import team.gif.robot.commands.AlignToAprilTag;
+import team.gif.robot.commands.Collector.CollectorCrateFlip;
 import team.gif.robot.commands.Collector.CollectorIntake;
 import team.gif.robot.commands.Collector.CollectorShoot;
 import team.gif.robot.commands.Elevator.SetElevatorPosition;
@@ -34,6 +35,7 @@ public class RobotContainer {
          */
         NamedCommands.registerCommand("Run Intake", new CollectorIntake());
         NamedCommands.registerCommand("Run Shooter", new CollectorShoot());
+        NamedCommands.registerCommand("Flip", new CollectorCrateFlip());
         NamedCommands.registerCommand("Elevator Stage 1", new SetElevatorPosition(Constants.Elevator.STAGE_1_POSITION_TICKS));
         NamedCommands.registerCommand("Elevator Stage 0", new SetElevatorPosition(Constants.Elevator.STAGE_0_POSITION_TICKS));
         NamedCommands.registerCommand("Align", new AlignToAprilTag());
