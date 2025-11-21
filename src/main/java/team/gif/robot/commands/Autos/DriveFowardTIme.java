@@ -6,7 +6,6 @@ import team.gif.robot.Robot;
 
 public class DriveFowardTIme extends Command {
 
-    private double setpoint = 0.0;
     private int time =0;
 
     public DriveFowardTIme() {

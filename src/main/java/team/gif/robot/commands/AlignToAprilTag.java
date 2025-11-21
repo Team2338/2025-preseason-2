@@ -36,7 +36,7 @@ private int targetID;
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-            Robot.photon.alignToTarget(targetID);
+        Robot.photon.alignToTarget(targetID);
         if(Robot.photon.hasTarget(targetID)){
         }
         else{

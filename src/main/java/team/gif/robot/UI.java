@@ -40,6 +40,7 @@ public class UI {
         SmartDashboard.putString("Right Drive Encoder", String.format("%38.5f", Robot.driveTrain.getRightDriveEncoder()));
         SmartDashboard.putNumber("Match Time", Robot.matchTime);
         SmartDashboard.putNumber("Battery Voltage", RobotController.getBatteryVoltage());
+        SmartDashboard.putNumber("Pigeon", Robot.pigeon.getHeading());
 
     }
 

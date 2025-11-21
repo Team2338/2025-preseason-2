@@ -55,9 +55,9 @@ public class Photon extends SubsystemBase {
      * @return the desired target's yaw
      */
     public double getTargetYaw(int targetID) {
-        double targetYaw = 0.0;
-        double distance = 0.0;
-        double offsetAngle = 0.0;
+        double targetYaw;
+        double distance;
+        double offsetAngle;
         double realYaw = 0.0;
         var results = camera.getAllUnreadResults();
         if(!results.isEmpty()){

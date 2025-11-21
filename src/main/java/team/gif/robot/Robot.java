@@ -69,7 +69,7 @@ public class Robot extends TimedRobot {
     robotContainer = new RobotContainer();
     oi = new OI();
     ui = new UI();
-    pigeon.addToDashboard("Gyro");
+//    pigeon.addToDashboard("Gyro");
     autonomousCommand = new RedAuto();
 
   }
