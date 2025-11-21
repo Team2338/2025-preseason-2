@@ -55,7 +55,7 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.C
     CameraServer.startAutomaticCapture();
-    photon = new Photon("camera1");
+    photon = new Photon("Camera_Module_v2");
     collector = new Collector();
     pigeon = new Pigeon(RobotMap.PIGEON_ID);
     driveTrain = new DriveTrain();
