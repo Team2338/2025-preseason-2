@@ -41,6 +41,8 @@ public class UI {
         SmartDashboard.putNumber("Match Time", Robot.matchTime);
         SmartDashboard.putNumber("Battery Voltage", RobotController.getBatteryVoltage());
         SmartDashboard.putNumber("Pigeon", Robot.pigeon.getHeading());
+        SmartDashboard.putNumber("Detected ID", Robot.photon.getTargetID());
+        SmartDashboard.putNumber("Target Yaw", Robot.photon.getTargetYaw());
 
     }
 
