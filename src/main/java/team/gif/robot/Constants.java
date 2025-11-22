@@ -25,8 +25,8 @@ public final class Constants {
         public static final int APRIL_TAG_ID_RED = 1;
         public static final int APRIL_TAG_ID_BLUE = 1;
         public static final int APRIL_TAG_ID_MANUAL = 1;
-        public static final double CAMERA_OFFSET_X_INCHES = 11;
-        public static final double CAMERA_OFFSET_X_METERS = Units.inchesToMeters(CAMERA_OFFSET_X_INCHES);
+//        public static final double CAMERA_OFFSET_X_INCHES = 11;
+//        public static final double CAMERA_OFFSET_X_METERS = Units.inchesToMeters(CAMERA_OFFSET_X_INCHES);
     }
 
     public static final class Drivetrain {
