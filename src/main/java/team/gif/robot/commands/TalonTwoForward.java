@@ -8,7 +8,7 @@ public class TalonTwoForward extends Command {
 
     public TalonTwoForward() {
         super();
-        addRequirements(Robot.talonTwo);
+//        addRequirements(Robot.talonTwo);
         //addRequirements(Robot.climber); // uncomment
     }
 
@@ -20,7 +20,7 @@ public class TalonTwoForward extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        Robot.talonTwo.moveTalon(Constants.TALON_MOTOR_PERCENT);
+//        Robot.talonTwo.moveTalon(Constants.TALON_MOTOR_PERCENT);
 
     }
 
@@ -33,6 +33,6 @@ public class TalonTwoForward extends Command {
     // Called when the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        Robot.talonTwo.moveTalon(0);
+//        Robot.talonTwo.moveTalon(0);
     }
 }

@@ -8,7 +8,7 @@ public class TalonOneBankward extends Command {
 
     public TalonOneBankward() {
         super();
-        addRequirements(Robot.talonOne);
+//        addRequirements(Robot.talonOne);
         //addRequirements(Robot.climber); // uncomment
     }
 
@@ -20,7 +20,7 @@ public class TalonOneBankward extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        Robot.talonOne.moveTalon(-Constants.TALON_MOTOR_PERCENT);
+//        Robot.talonOne.moveTalon(-Constants.TALON_MOTOR_PERCENT);
 
     }
 
@@ -33,6 +33,6 @@ public class TalonOneBankward extends Command {
     // Called when the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        Robot.talonOne.moveTalon(0);
+//        Robot.talonOne.moveTalon(0);
     }
 }

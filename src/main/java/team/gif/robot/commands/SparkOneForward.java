@@ -8,7 +8,7 @@ public class SparkOneForward extends Command {
 
     public SparkOneForward() {
         super();
-        addRequirements(Robot.sparkOne);
+//        addRequirements(Robot.sparkOne);
         //addRequirements(Robot.climber); // uncomment
     }
 
@@ -19,7 +19,7 @@ public class SparkOneForward extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        Robot.sparkOne.setVoltage(Constants.SPARK_SPEED_VOLT);
+//        Robot.sparkOne.setVoltage(Constants.SPARK_SPEED_VOLT);
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
@@ -31,6 +31,6 @@ public class SparkOneForward extends Command {
     // Called when the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        Robot.sparkOne.setVoltage(0);
+//        Robot.sparkOne.setVoltage(0);
     }
 }

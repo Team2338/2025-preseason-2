@@ -20,7 +20,7 @@ public class ArcadeDrivee extends Command {
     public void execute() {
         double speed = -Robot.oi.driver.getLeftY();
         double rotation = -Robot.oi.driver.getRightX();
-        Robot.driveChain.arcadeDrive(speed, rotation);
+        Robot.driveChain.arcadeDrive(rotation, speed);
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.

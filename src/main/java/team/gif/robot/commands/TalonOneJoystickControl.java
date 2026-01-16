@@ -8,7 +8,7 @@ public class TalonOneJoystickControl extends Command {
 
     public TalonOneJoystickControl() {
         super();
-        addRequirements(Robot.talonOne);
+//        addRequirements(Robot.talonOne);
         //addRequirements(Robot.climber); // uncomment
     }
 
@@ -20,7 +20,7 @@ public class TalonOneJoystickControl extends Command {
     @Override
     public void execute() {
         double left = Robot.oi.driver.getRightY();
-        Robot.talonOne.moveTalon(-left);
+//        Robot.talonOne.moveTalon(-left);
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.

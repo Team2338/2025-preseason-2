@@ -9,11 +9,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
-import team.gif.robot.commands.AutosGroup;
-import team.gif.robot.subsystems.DriveChain;
-import team.gif.robot.subsystems.SparkOne;
-import team.gif.robot.subsystems.TalonOne;
-import team.gif.robot.subsystems.TalonTwo;
+import team.gif.robot.subsystems.DriveTrain;
 import team.gif.robot.subsystems.drivers.Pigeon;
 
 /**
@@ -25,11 +21,11 @@ import team.gif.robot.subsystems.drivers.Pigeon;
 public class Robot extends TimedRobot {
   private static Command autonomousCommand;
   private RobotContainer robotContainer;
-  public static TalonOne talonOne;
+  /*public static TalonOne talonOne;
   public static SparkOne sparkOne;
-  public static TalonTwo talonTwo;
+  public static TalonTwo talonTwo;*/
   public static OI oi;
-  public static DriveChain driveChain;
+  public static DriveTrain driveChain;
 
   public static Pigeon pigeon;
 
@@ -46,15 +42,15 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
-    talonOne = new TalonOne();
+    /*talonOne = new TalonOne();
     sparkOne = new SparkOne();
-    talonTwo = new TalonTwo();
-    driveChain = new DriveChain();
+    talonTwo = new TalonTwo();*/
+    driveChain = new DriveTrain();
 
     //These should be at or near the bottom
     oi = new OI();
     ui = new UI();
-    autonomousCommand = new AutosGroup();
+//    autonomousCommand = new AutosGroup();
 
 
   }

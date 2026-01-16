@@ -10,12 +10,12 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import team.gif.robot.RobotMap;
 
-public class DriveChain extends SubsystemBase {
+public class DriveTrain extends SubsystemBase {
     /** Creates a new ExampleSubsystem. */
     private WPI_TalonSRX leftMotor;
     private WPI_TalonSRX rightMotor;
     private DifferentialDrive drive;
-    public DriveChain() {
+    public DriveTrain() {
         leftMotor = new WPI_TalonSRX(RobotMap.LEFT_DRIVETRAIN_TALON_ID);
         rightMotor = new WPI_TalonSRX(RobotMap.RIGHT_DRIVETRAIN_TALON_ID);
 
@@ -29,8 +29,8 @@ public class DriveChain extends SubsystemBase {
 
 
     }
-    public void arcadeDrive(double speed, double rotation){
-        drive.arcadeDrive(speed, rotation);
+    public void arcadeDrive(double rotation, double speed){
+        drive.arcadeDrive(rotation, speed);
     }
 
 
