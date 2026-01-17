@@ -14,9 +14,9 @@ package team.gif.robot;
  */
 public final class Constants {
     public static double TALON_MOTOR_PERCENT = .2;
-    public static double SPARK_SPEED_VOLT = 2.5;
-    public static double SPARK_MOTOR_I = 0.00085;
-    public static double SPARK_MOTOR_P = 0.00000005;
+//    public static double SPARK_SPEED_VOLT = 2.5;
+//    public static double SPARK_MOTOR_I = 0.00085;
+//    public static double SPARK_MOTOR_P = 0.00000005;
 
 
 

@@ -27,7 +27,7 @@ public class SparkOne extends SubsystemBase {
         sparkEncoder = sparkOne.getEncoder();
         oneSparkCpnfig = new SparkMaxConfig();
 
-        oneSparkCpnfig.closedLoop.pid(Constants.SPARK_MOTOR_P,Constants.SPARK_MOTOR_I, 0.0);
+       // oneSparkCpnfig.closedLoop.pid(Constants.SPARK_MOTOR_P,Constants.SPARK_MOTOR_I, 0.0);
 
 
         oneSparkCpnfig.idleMode(SparkMaxConfig.IdleMode.kBrake); //or replace kBrake with kCoast

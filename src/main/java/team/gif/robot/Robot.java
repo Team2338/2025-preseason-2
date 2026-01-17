@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
+import team.gif.robot.subsystems.Collector;
 import team.gif.robot.subsystems.DriveTrain;
 import team.gif.robot.subsystems.drivers.Pigeon;
 
@@ -21,8 +22,8 @@ import team.gif.robot.subsystems.drivers.Pigeon;
 public class Robot extends TimedRobot {
   private static Command autonomousCommand;
   private RobotContainer robotContainer;
-  /*public static TalonOne talonOne;
-  public static SparkOne sparkOne;
+  public static Collector collector;
+  /*public static SparkOne sparkOne;
   public static TalonTwo talonTwo;*/
   public static OI oi;
   public static DriveTrain driveChain;
@@ -42,8 +43,8 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
-    /*talonOne = new TalonOne();
-    sparkOne = new SparkOne();
+    collector = new Collector();
+    /*sparkOne = new SparkOne();
     talonTwo = new TalonTwo();*/
     driveChain = new DriveTrain();
 
