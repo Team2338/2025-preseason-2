@@ -91,7 +91,7 @@ public class OI {
          */
         //dA.whileTrue(new SparkOneForward());
         //dB.whileTrue(new SparkOneBackward());
-        dA.whileTrue(new CollectorIn());
+        aA.whileTrue(new CollectorIn());
 
 
 

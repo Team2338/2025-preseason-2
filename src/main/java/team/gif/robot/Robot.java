@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
+import team.gif.robot.commands.ArcadeDrivee;
 import team.gif.robot.subsystems.Collector;
 import team.gif.robot.subsystems.DriveTrain;
 import team.gif.robot.subsystems.drivers.Pigeon;
@@ -47,6 +48,8 @@ public class Robot extends TimedRobot {
     /*sparkOne = new SparkOne();
     talonTwo = new TalonTwo();*/
     driveChain = new DriveTrain();
+    driveChain.setDefaultCommand(new ArcadeDrivee());
+
 
     //These should be at or near the bottom
     oi = new OI();
