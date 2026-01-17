@@ -20,7 +20,7 @@ public class CollectorIn extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-         Robot.collector.moveTalon(Constants.TALON_MOTOR_PERCENT);
+         Robot.collector.moveTalon(-Constants.TALON_MOTOR_PERCENT);
 
     }
 
