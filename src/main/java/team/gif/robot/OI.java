@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 import team.gif.robot.commands.CollectorIn;
 import team.gif.robot.commands.SparkOneBackward;
 import team.gif.robot.commands.SparkOneForward;
+import team.gif.robot.commands.SparkOneRPM;
 
 public class OI {
     /*
@@ -90,7 +91,7 @@ public class OI {
          *   aX.onTrue(new PrintCommand("aX"));
          */
         //dA.whileTrue(new SparkOneForward());
-        //dB.whileTrue(new SparkOneBackward());
+        dB.whileTrue(new SparkOneRPM());
         dA.whileTrue(new CollectorIn());
 
 

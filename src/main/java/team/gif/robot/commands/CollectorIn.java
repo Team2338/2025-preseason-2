@@ -8,7 +8,7 @@ public class CollectorIn extends Command {
 
     public CollectorIn() {
         super();
-         addRequirements(Robot.collector);
+//         addRequirements(Robot.collector);
         //addRequirements(Robot.climber); // uncomment
     }
 
@@ -18,11 +18,11 @@ public class CollectorIn extends Command {
     }
 
     // Called every time the scheduler runs (~20ms) while the command is scheduled
-    @Override
-    public void execute() {
-         Robot.collector.moveTalon(Constants.TALON_MOTOR_PERCENT);
-
-    }
+//    @Override
+//    public void execute() {
+//         Robot.collector.moveTalon(Constants.TALON_MOTOR_PERCENT);
+//
+//    }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
     @Override
@@ -31,8 +31,8 @@ public class CollectorIn extends Command {
     }
 
     // Called when the command ends or is interrupted.
-    @Override
-    public void end(boolean interrupted) {
-         Robot.collector.moveTalon(0);
-    }
+//    @Override
+//    public void end(boolean interrupted) {
+//         Robot.collector.moveTalon(0);
+//    }
 }

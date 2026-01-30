@@ -13,7 +13,7 @@ public class UI {
      *  and save file as "YYYY elastic-layout.json"
      */
     public UI() {
-        
+
     }
 
     /**
@@ -25,5 +25,6 @@ public class UI {
     public void update() {
         //Example
         //SmartDashboard.putNumber("Climber Position", Robot.elevator.getPosition())
+        SmartDashboard.putNumber("NEO/RPM", Robot.sparkOne.getRPM());
     }
 }

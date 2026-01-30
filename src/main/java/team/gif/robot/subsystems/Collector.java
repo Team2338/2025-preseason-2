@@ -9,9 +9,8 @@ import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import team.gif.robot.RobotMap;
-
+/**
 public class Collector extends SubsystemBase {
-    /** Creates a new ExampleSubsystem. */
     private TalonSRX talonOne;
 
     public Collector() {
@@ -25,5 +24,5 @@ public class Collector extends SubsystemBase {
 
 
     }
-
+**/
 

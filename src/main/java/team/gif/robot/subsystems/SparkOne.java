@@ -7,27 +7,31 @@ package team.gif.robot.subsystems;
 import com.revrobotics.RelativeEncoder;
 import com.revrobotics.spark.SparkBase;
 import com.revrobotics.spark.SparkClosedLoopController;
-import com.revrobotics.spark.SparkLowLevel;
+import com.revrobotics.spark.SparkFlex;import com.revrobotics.spark.SparkLowLevel;
 import com.revrobotics.spark.SparkMax;
-import com.revrobotics.spark.config.SparkMaxConfig;
+import com.revrobotics.spark.config.SparkFlexConfig;import com.revrobotics.spark.config.SparkMaxConfig;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import team.gif.robot.Constants;
 import team.gif.robot.RobotMap;
 
 public class SparkOne extends SubsystemBase {
-    private SparkMax sparkOne;
-    private SparkMaxConfig oneSparkCpnfig;
+    private SparkFlex sparkOne;
+    private SparkFlexConfig oneSparkCpnfig;
     public SparkClosedLoopController neoPID; //PID should ideally be capitalized
     public RelativeEncoder sparkEncoder;
-    /** Creates a new ExampleSubsystem. */
+    double kP = Constants.SPARK_MOTOR_P;
+    double kI = Constants.SPARK_MOTOR_I;
+    double kD = 0;
+
     public SparkOne(){
 
-        sparkOne = new SparkMax(RobotMap.SPARK_ONE_ID, SparkLowLevel.MotorType.kBrushless);
+        sparkOne = new SparkFlex(RobotMap.SPARK_ONE_ID, SparkLowLevel.MotorType.kBrushless);
         neoPID = sparkOne.getClosedLoopController();
         sparkEncoder = sparkOne.getEncoder();
-        oneSparkCpnfig = new SparkMaxConfig();
+        oneSparkCpnfig = new SparkFlexConfig();
 
-       // oneSparkCpnfig.closedLoop.pid(Constants.SPARK_MOTOR_P,Constants.SPARK_MOTOR_I, 0.0);
+        oneSparkCpnfig.closedLoop.pid(kP, kI, kD);
 
 
         oneSparkCpnfig.idleMode(SparkMaxConfig.IdleMode.kBrake); //or replace kBrake with kCoast
@@ -35,8 +39,8 @@ public class SparkOne extends SubsystemBase {
 
         sparkOne.configure(oneSparkCpnfig, SparkBase.ResetMode.kResetSafeParameters, SparkBase.PersistMode.kPersistParameters);
 
-
     }
+
     public void set(double percentOutput) { //i think the variable name should just be percent but feel free to ignore this
         sparkOne.set(percentOutput); //This can be a number from -1 (full reverse) to 1 (full forward)
 
@@ -45,12 +49,32 @@ public class SparkOne extends SubsystemBase {
     public void setVoltage(double voltage) {
         sparkOne.setVoltage(voltage); //Our electrical systems run on 12v, so this value can be from -12 to 12
     }
+
     public void setRPM(double RPM){
-        neoPID.setReference(RPM,SparkBase.ControlType.kVelocity);
+        neoPID.setReference(-RPM,SparkBase.ControlType.kVelocity);
     }
+
     public double getRPM(){
-        return sparkEncoder.getVelocity();
+        return -sparkEncoder.getVelocity();
     }
 
+    @Override
+    public void periodic() {
+        super.periodic();
+        SmartDashboard.putNumber("NEO/kP", kP);
+        SmartDashboard.putNumber("NEO/kI", kI);
+        SmartDashboard.putNumber("NEO/kD", kD);
 
+        double kP2 = SmartDashboard.getNumber("NEO/kP", kP);
+        double kI2 = SmartDashboard.getNumber("NEO/kI", kI);
+        double kD2 = SmartDashboard.getNumber("NEO/kD", kD);
+
+        if(kP2 != kP || kI2 != kI || kD2 != kD){
+            kP = kP2; kI = kI2; kD = kD2;
+            oneSparkCpnfig.closedLoop.pid(kP, kI, kD);
+            sparkOne.configure(oneSparkCpnfig, SparkBase.ResetMode.kResetSafeParameters, SparkBase.PersistMode.kPersistParameters);
+        }
+
+
+    }
 }
